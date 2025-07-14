@@ -1,0 +1,107 @@
+{
+    "exam1": [
+        {
+            "question": "What is the primary purpose of a microflow in Mendix?",
+            "options": [
+                {"text": "To define the user interface layout"},
+                {"text": "To model complex business logic and processes"},
+                {"text": "To configure database connections"},
+                {"text": "To manage user roles and permissions"}
+            ],
+            "correctAnswer": 1,
+            "feedback": "Microflows are used to model complex business logic and processes in Mendix applications. They allow you to visually define the flow of your application's logic using elements like activities, decisions, and loops."
+        },
+        {
+            "question": "Which of the following is NOT a valid entity event in a Mendix domain model?",
+            "options": [
+                {"text": "Before commit"},
+                {"text": "After commit"},
+                {"text": "Before delete"},
+                {"text": "After retrieve"}
+            ],
+            "correctAnswer": 3,
+            "feedback": "The valid entity events in Mendix are Before commit, After commit, Before delete, and After delete. 'After retrieve' is not a standard entity event in Mendix."
+        },
+        {
+            "question": "What is the purpose of an association in the Mendix domain model?",
+            "options": [
+                {"text": "To define relationships between entities"},
+                {"text": "To configure security rules"},
+                {"text": "To create reusable microflow components"},
+                {"text": "To define validation rules for attributes"}
+            ],
+            "correctAnswer": 0,
+            "feedback": "Associations in the Mendix domain model define relationships between entities. They can be one-to-one, one-to-many, or many-to-many relationships, similar to foreign keys in traditional databases."
+        }
+    ],
+    "exam2": [
+        {
+            "question": "Which widget would you use to display a collection of objects in a tabular format?",
+            "options": [
+                {"text": "Data view"},
+                {"text": "Template grid"},
+                {"text": "Data grid"},
+                {"text": "List view"}
+            ],
+            "correctAnswer": 2,
+            "feedback": "The Data grid widget is specifically designed to display a collection of objects in a tabular format with columns and rows. It provides features like sorting, filtering, and pagination."
+        },
+        {
+            "question": "What is the purpose of the 'Commit' activity in a microflow?",
+            "options": [
+                {"text": "To save changes made to an object to the database"},
+                {"text": "To send data to an external system"},
+                {"text": "To create a new object instance"},
+                {"text": "To validate object attributes"}
+            ],
+            "correctAnswer": 0,
+            "feedback": "The Commit activity saves changes made to an object (or multiple objects) to the database. It's necessary to explicitly commit objects for changes to persist."
+        },
+        {
+            "question": "Which of the following is true about Mendix modules?",
+            "options": [
+                {"text": "They can contain other modules"},
+                {"text": "They are deployed independently of each other"},
+                {"text": "They help organize your project into logical units"},
+                {"text": "They cannot share entities with other modules"}
+            ],
+            "correctAnswer": 2,
+            "feedback": "Modules help organize your Mendix project into logical units. While they can contain model elements like entities and microflows, they cannot contain other modules. Entities can be shared between modules using module roles."
+        }
+    ],
+    "exam3": [
+        {
+            "question": "What is the purpose of a nanoflow in Mendix?",
+            "options": [
+                {"text": "To execute complex business logic on the server"},
+                {"text": "To run simple client-side logic in offline apps"},
+                {"text": "To define database schema changes"},
+                {"text": "To configure scheduled events"}
+            ],
+            "correctAnswer": 1,
+            "feedback": "Nanoflows are lightweight microflows that run on the client side, making them ideal for offline applications. They have limited capabilities compared to microflows but can execute without network connectivity."
+        },
+        {
+            "question": "Which security level would you use to restrict access to certain microflows?",
+            "options": [
+                {"text": "Entity access"},
+                {"text": "Module role"},
+                {"text": "User role"},
+                {"text": "Page access"}
+            ],
+            "correctAnswer": 1,
+            "feedback": "Module roles are used to restrict access to microflows. You can specify which module roles can execute a particular microflow in its security settings."
+        },
+        {
+            "question": "What is the correct sequence of events when an object is committed?",
+            "options": [
+                {"text": "Before commit → Validation → After commit"},
+                {"text": "Validation → Before commit → After commit"},
+                {"text": "Before commit → After commit → Validation"},
+                {"text": "Validation → After commit → Before commit"}
+            ],
+            "correctAnswer": 1,
+            "feedback": "The correct sequence is: First validation rules are checked, then the Before commit event runs, the object is saved to the database, and finally the After commit event runs."
+        }
+    ]
+}
