@@ -1,0 +1,1146 @@
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+<!-- manual.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Certificación - Mendix Rapid Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 70px;
+        }
+        
+        .page-hero-content {
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .breadcrumb i {
+            opacity: 0.6;
+        }
+        
+        .manual-content {
+            padding: 60px 0;
+        }
+        
+        .manual-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+        }
+        
+        .manual-sidebar {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+        
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px;
+            padding: 30px;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-link {
+            display: block;
+            padding: 10px 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .manual-main {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .content-section {
+            margin-bottom: 50px;
+        }
+        
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .content-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .content-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(29, 233, 182, 0.1), rgba(0, 196, 167, 0.1));
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .manual-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .manual-sidebar {
+                order: 2;
+            }
+            
+            .sidebar-sticky {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>Mendix Certification</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/index.html" class="nav-link">Inicio</a></li>
+                <li><a href="/pages/certification-manual.html" class="nav-link active">Manual</a></li>
+                <li><a href="material.html" class="nav-link">Material</a></li>
+                <li><a href="/pages/question-bank.html" class="nav-link">Exámenes</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1><i class="fas fa-book-open"></i> Manual de Certificación</h1>
+                <p>Guía completa para obtener la certificación Mendix Rapid Developer</p>
+                <div class="breadcrumb">
+                    <a href="/index.html">Inicio</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Manual de Certificación</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="manual-content">
+        <div class="container">
+            <div class="manual-layout">
+                <aside class="manual-sidebar">
+                    <div class="sidebar-sticky">
+                        <h3>Contenido</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#introduction" class="sidebar-link active">Introducción</a></li>
+                            <li><a href="#fundamentals" class="sidebar-link">Fundamentos</a></li>
+                            <li><a href="#development" class="sidebar-link">Desarrollo</a></li>
+                            <li><a href="#data-modeling" class="sidebar-link">Modelado de Datos</a></li>
+                            <li><a href="#ui-development" class="sidebar-link">Desarrollo de UI</a></li>
+                            <li><a href="#logic-flows" class="sidebar-link">Flujos de Lógica</a></li>
+                            <li><a href="#integration" class="sidebar-link">Integración</a></li>
+                            <li><a href="#security" class="sidebar-link">Seguridad</a></li>
+                            <li><a href="#deployment" class="sidebar-link">Despliegue</a></li>
+                            <li><a href="#best-practices" class="sidebar-link">Mejores Prácticas</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <main class="manual-main">
+                    <div class="content-section" id="introduction">
+                        <h2>Introducción a la Certificación Mendix Rapid Developer</h2>
+                        <p>La certificación Mendix Rapid Developer valida tus habilidades fundamentales en el desarrollo de aplicaciones usando la plataforma Mendix. Esta certificación demuestra tu capacidad para crear aplicaciones funcionales y escalables utilizando las mejores prácticas de desarrollo low-code.</p>
+                        
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-target"></i> Objetivos de la Certificación</h3>
+                            <ul>
+                                <li>Demostrar competencia en el desarrollo de aplicaciones Mendix</li>
+                                <li>Validar conocimientos en modelado de datos y flujos de trabajo</li>
+                                <li>Confirmar habilidades en desarrollo de interfaces de usuario</li>
+                                <li>Acreditar capacidades de integración y despliegue</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Estructura del Examen</h3>
+                        <p>El examen de certificación consta de 50 preguntas de opción múltiple que cubren los siguientes temas:</p>
+                        <ul>
+                            <li>Fundamentos de Mendix (20%)</li>
+                            <li>Modelado de Datos (25%)</li>
+                            <li>Desarrollo de UI (25%)</li>
+                            <li>Lógica de Negocio y Flujos (20%)</li>
+                            <li>Integración y Despliegue (10%)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section" id="fundamentals">
+                        <h2>Fundamentos de Mendix</h2>
+                        <p>Mendix es una plataforma de desarrollo low-code que permite crear aplicaciones empresariales de forma rápida y eficiente. La plataforma se basa en modelos visuales que generan automáticamente el código necesario.</p>
+                        
+                        <h3>Componentes Principales</h3>
+                        <ul>
+                            <li><strong>Mendix Studio Pro:</strong> IDE principal para desarrollo</li>
+                            <li><strong>Mendix Portal:</strong> Plataforma de gestión de proyectos</li>
+                            <li><strong>Mendix Cloud:</strong> Plataforma de despliegue</li>
+                            <li><strong>Mendix Marketplace:</strong> Repositorio de componentes</li>
+                        </ul>
+                        
+                        <div class="code-block">
+                            <h4>Arquitectura MVC en Mendix</h4>
+                            <p>- Model: Domain Model (Entidades y Atributos)<br>
+                            - View: Pages (Formularios y Layouts)<br>
+                            - Controller: Microflows (Lógica de Negocio)</p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-info-circle"></i> Importante</h3>
+                            <p>Para información más completa visitar:<a href="https://academy.mendix.com" target="_blank">Mendix Academy</a></p>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="development">
+                        <h2>Proceso de Desarrollo</h2>
+                        <p>El desarrollo en Mendix sigue una metodología ágil que permite iteraciones rápidas y entregas continuas.</p>
+                        
+                        <h3>Flujo de Trabajo</h3>
+                        <ol>
+                            <li>Análisis de requerimientos</li>
+                            <li>Diseño del modelo de dominio</li>
+                            <li>Creación de páginas y navegación</li>
+                            <li>Implementación de lógica de negocio</li>
+                            <li>Pruebas y validación</li>
+                            <li>Despliegue y monitoreo</li>
+                        </ol>
+                        
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-lightbulb"></i> Mejores Prácticas</h3>
+                            <ul>
+                                <li>Usar nomenclatura consistente</li>
+                                <li>Documentar microflows complejos</li>
+                                <li>Implementar validaciones adecuadas</li>
+                                <li>Optimizar consultas a la base de datos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="data-modeling">
+                        <h2>Modelado de Datos</h2>
+                        <p>El Domain Model es el corazón de cualquier aplicación Mendix. Define las entidades, atributos y relaciones que estructuran la información.</p>
+                        
+                        <h3>Elementos del Domain Model</h3>
+                        <ul>
+                            <li><strong>Entidades:</strong> Representan objetos del mundo real</li>
+                            <li><strong>Atributos:</strong> Propiedades de las entidades</li>
+                            <li><strong>Asociaciones:</strong> Relaciones entre entidades</li>
+                            <li><strong>Herencia:</strong> Relaciones padre-hijo</li>
+                        </ul>
+                        
+                        <h3>Tipos de Datos</h3>
+                        <ul>
+                            <li>String, Integer, Long, Decimal</li>
+                            <li>Boolean, DateTime, Date, Time</li>
+                            <li>Enumeration, Binary</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section" id="ui-development">
+                        <h2>Desarrollo de Interfaces de Usuario</h2>
+                        <p>Mendix proporciona un conjunto completo de widgets y layouts para crear interfaces de usuario intuitivas y responsivas.</p>
+                        
+                        <h3>Tipos de Páginas</h3>
+                        <ul>
+                            <li><strong>List Pages:</strong> Mostrar colecciones de datos</li>
+                            <li><strong>Edit Pages:</strong> Formularios de edición</li>
+                            <li><strong>Detail Pages:</strong> Visualización de información</li>
+                            <li><strong>Dashboard Pages:</strong> Páginas de resumen</li>
+                        </ul>
+                        
+                        <h3>Widgets Principales</h3>
+                        <ul>
+                            <li>Data Grid, List View, Template Grid</li>
+                            <li>Data View, List View, Reference Selector</li>
+                            <li>Text Box, Text Area, Drop Down</li>
+                            <li>Button, Link, Image</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section" id="logic-flows">
+                        <h2>Flujos de Lógica</h2>
+                        <p>Los Microflows son el mecanismo principal para implementar lógica de negocio en Mendix.</p>
+                        
+                        <h3>Actividades de Microflow</h3>
+                        <ul>
+                            <li><strong>Create:</strong> Crear nuevos objetos</li>
+                            <li><strong>Retrieve:</strong> Obtener datos de la base de datos</li>
+                            <li><strong>Change:</strong> Modificar objetos existentes</li>
+                            <li><strong>Delete:</strong> Eliminar objetos</li>
+                            <li><strong>Show Page:</strong> Navegar a otra página</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-info-circle"></i> Importante</h3>
+                            <p>Los microflows deben ser eficientes y manejar excepciones adecuadamente. Siempre considera el rendimiento y la escalabilidad.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="integration">
+                        <h2>Integración</h2>
+                        <p>Mendix ofrece múltiples opciones para integrar con sistemas externos.</p>
+                        
+                        <h3>Tipos de Integración</h3>
+                        <ul>
+                            <li><strong>REST Services:</strong> APIs RESTful</li>
+                            <li><strong>Web Services:</strong> SOAP/WSDL</li>
+                            <li><strong>OData:</strong> Protocolo de datos abierto</li>
+                            <li><strong>Database Connector:</strong> Acceso directo a BD</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section" id="security">
+                        <h2>Seguridad</h2>
+                        <p>La seguridad en Mendix se implementa a través de roles de usuario, reglas de acceso y validaciones.</p>
+                        
+                        <h3>Niveles de Seguridad</h3>
+                        <ul>
+                            <li><strong>App Security:</strong> Configuración general</li>
+                            <li><strong>Module Security:</strong> Acceso a módulos</li>
+                            <li><strong>Entity Security:</strong> Permisos de datos</li>
+                            <li><strong>Page Security:</strong> Acceso a páginas</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section" id="deployment">
+                        <h2>Despliegue</h2>
+                        <p>Mendix Cloud proporciona una plataforma completa para el despliegue y gestión de aplicaciones.</p>
+                        
+                        <h3>Entornos de Despliegue</h3>
+                        <ul>
+                            <li><strong>Development:</strong> Desarrollo y pruebas</li>
+                            <li><strong>Acceptance:</strong> Validación de usuario</li>
+                            <li><strong>Production:</strong> Entorno productivo</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section" id="best-practices">
+                        <h2>Mejores Prácticas</h2>
+                        <p>Seguir las mejores prácticas garantiza aplicaciones mantenibles y escalables.</p>
+                        
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-check-circle"></i> Recomendaciones</h3>
+                            <ul>
+                                <li>Usar patrones de diseño consistentes</li>
+                                <li>Implementar manejo de errores robusto</li>
+                                <li>Documentar código complejo</li>
+                                <li>Realizar pruebas exhaustivas</li>
+                                <li>Optimizar rendimiento constantemente</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="content-section" id="best-practices">
+                        <h2>Pasos a seguir para la certificación </h2>
+                        <p>Estos son os pasoa sugeridos para <strong>Rapid Developer Certification</strong> .</p>
+                        
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-check-circle"></i> Recomendaciones</h3>
+                            <ol>
+                                <li>Revisar detalles del examen</li>
+                                <li>Inscribirse y reservar examen, crea tu cuenta de Mendix</li>
+                                <li>Estudia el contenido del examen, entra a <a href="https://academy.mendix.com" target="_blank">Mendix Academy</a></li>
+                                <li>Realiza ejercios de práctcia para mejorar tu comprensión de los temas</li>
+                                <li>Practica mediante examenes de simulación las veces necesarias</li>
+                                <li>Presenta tu examen de manera tranquila y objetiva</li>
+                            </ol>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mendix Certification</h3>
+                    <p>Plataforma de preparación para la certificación Rapid Developer</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Útiles</h3>
+                    <ul>
+                        <li><a href="https://academy.mendix.com" target="_blank">Mendix Academy</a></li>
+                        <li><a href="https://docs.mendix.com" target="_blank">Documentación</a></li>
+                        <li><a href="https://marketplace.mendix.com" target="_blank">Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contáctanos</h3>
+                    <p>info@mendixcertification.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Mendix Rapid Developer Certification</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+<style>
+/* css/styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0595db;
+    --secondary-color: #1de9b6;
+    --accent-color: #00c4a7;
+    --dark-color: #1a1a1a;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+    --text-light: #666;
+    --gradient-primary: linear-gradient(135deg, #0595db, #1de9b6);
+    --gradient-secondary: linear-gradient(135deg, #1de9b6, #00c4a7);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-logo i {
+    font-size: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 120px 0 80px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #ffffff, #ccddff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: var(--gradient-secondary);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-animation {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.code-animation::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: spin 20s linear infinite;
+}
+
+.code-animation i {
+    font-size: 4rem;
+    color: var(--secondary-color);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* About Mendix Section */
+.about-mendix {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+
+.about-mendix h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.about-item {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.about-item:hover {
+    transform: translateY(-10px);
+}
+
+.about-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.about-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.about-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.about-item p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Certification Path Section */
+.certification-path {
+    padding: 80px 0;
+    background: white;
+}
+
+.certification-path h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+}
+
+.path-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.path-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.path-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.path-number {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.path-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.path-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.path-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.path-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.path-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.path-btn:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.feature-item p {
+    color: var(--text-light);
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .path-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .about-item,
+    .path-card {
+        padding: 30px 20px;
+    }
+}
+</style>
+
+<script>
+// js/script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }));
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.about-item, .path-card, .feature-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Add loading animation
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+    });
+});
+
+// Add CSS for loading animation
+const style = document.createElement('style');
+style.textContent = `
+    body:not(.loaded) {
+        overflow: hidden;
+    }
+    
+    body:not(.loaded)::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-primary);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+    
+    body.loaded::before {
+        opacity: 0;
+        pointer-events: none;
+    }
+`;
+document.head.appendChild(style);
+</script>

@@ -7,43 +7,59 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/exam-styles.css">
+    <link rel="stylesheet" href="../css/style-encabezado.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
+
 <body>
+    
+    
     <header>
+        
         <div class="container">
-            <img src="../images/mendix-logo.png" alt="Mendix Logo" class="logo">
+            <a href="/index.html"><img src="../images/mendix-logo.png" alt="Mendix Logo" class="logo"></a>
             <h1>Banco de Reactivos</h1>
             <p>Practica con exámenes simulados para la certificación Rapid Developer</p>
         </div>
     </header>
 
-    <section class="exam-intro">
-        <div class="container">
-            <h2>Exámenes de Práctica</h2>
-            <p>Los siguientes exámenes simulan la experiencia real de certificación. Cada uno contiene 50 preguntas y tienes 50 minutos para completarlos.</p>
-            
-            <div class="exam-cards">
-                <div class="exam-card" data-exam="1">
-                    <h3>Examen de Práctica 1</h3>
-                    <p>50 preguntas - 50 minutos</p>
-                    <button class="btn-start-exam">Comenzar Examen</button>
-                </div>
-                
-                <div class="exam-card" data-exam="2">
-                    <h3>Examen de Práctica 2</h3>
-                    <p>50 preguntas - 50 minutos</p>
-                    <button class="btn-start-exam">Comenzar Examen</button>
-                </div>
-                
-                <div class="exam-card" data-exam="3">
-                    <h3>Examen de Práctica 3</h3>
-                    <p>50 preguntas - 50 minutos</p>
-                    <button class="btn-start-exam">Comenzar Examen</button>
-                </div>
-            </div>
+   <section class="exam-intro">
+  <div class="container">
+    <h2>Exámenes de Práctica</h2>
+    <p>Los siguientes exámenes simulan la experiencia real de certificación. Cada uno contiene 50 preguntas y tienes 50 minutos para completarlos.</p>
+    
+    <div class="exam-cards">
+      <div class="exam-card" data-exam="1">
+        <div class="exam-icon">
+          <i class="fas fa-seedling"></i> <!-- Icono para básico -->
         </div>
-    </section>
+        <h3>Examen de Práctica 1 <span class="exam-level">Básico</span></h3>
+        <p>50 preguntas - 50 minutos</p>
+        <button class="btn-start-exam">Comenzar Examen</button>
+      </div>
+      
+      <div class="exam-card" data-exam="2">
+        <div class="exam-icon">
+          <i class="fas fa-chart-line"></i> <!-- Icono para intermedio -->
+        </div>
+        <h3>Examen de Práctica 2 <span class="exam-level">Intermedio</span></h3>
+        <p>50 preguntas - 50 minutos</p>
+        <button class="btn-start-exam">Comenzar Examen</button>
+      </div>
+      
+      <div class="exam-card" data-exam="3">
+        <div class="exam-icon">
+          <i class="fas fa-bolt"></i> <!-- Icono para avanzado -->
+        </div>
+        <h3>Examen de Práctica 3 <span class="exam-level">Avanzado</span></h3>
+        <p>50 preguntas - 50 minutos</p>
+        <button class="btn-start-exam">Comenzar Examen</button>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Modal de examen (oculto inicialmente) -->
     <div class="exam-modal" id="examModal">
@@ -122,7 +138,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2023 Mendix Certification Prep. No afiliado con Mendix Technology BV.</p>
+            <p>© 2025 Mendix Certification</p>
             <p>Todo el contenido se basa en la documentación oficial disponible en <a href="https://www.mendix.com/" target="_blank">mendix.com</a>.</p>
         </div>
     </footer>

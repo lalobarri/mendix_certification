@@ -1,107 +1,1460 @@
 {
-    "exam1": [
-        {
-            "question": "What is the primary purpose of a microflow in Mendix?",
-            "options": [
-                {"text": "To define the user interface layout"},
-                {"text": "To model complex business logic and processes"},
-                {"text": "To configure database connections"},
-                {"text": "To manage user roles and permissions"}
-            ],
-            "correctAnswer": 1,
-            "feedback": "Microflows are used to model complex business logic and processes in Mendix applications. They allow you to visually define the flow of your application's logic using elements like activities, decisions, and loops."
-        },
-        {
-            "question": "Which of the following is NOT a valid entity event in a Mendix domain model?",
-            "options": [
-                {"text": "Before commit"},
-                {"text": "After commit"},
-                {"text": "Before delete"},
-                {"text": "After retrieve"}
-            ],
-            "correctAnswer": 3,
-            "feedback": "The valid entity events in Mendix are Before commit, After commit, Before delete, and After delete. 'After retrieve' is not a standard entity event in Mendix."
-        },
-        {
-            "question": "What is the purpose of an association in the Mendix domain model?",
-            "options": [
-                {"text": "To define relationships between entities"},
-                {"text": "To configure security rules"},
-                {"text": "To create reusable microflow components"},
-                {"text": "To define validation rules for attributes"}
-            ],
-            "correctAnswer": 0,
-            "feedback": "Associations in the Mendix domain model define relationships between entities. They can be one-to-one, one-to-many, or many-to-many relationships, similar to foreign keys in traditional databases."
-        }
-    ],
-    "exam2": [
-        {
-            "question": "Which widget would you use to display a collection of objects in a tabular format?",
-            "options": [
-                {"text": "Data view"},
-                {"text": "Template grid"},
-                {"text": "Data grid"},
-                {"text": "List view"}
-            ],
-            "correctAnswer": 2,
-            "feedback": "The Data grid widget is specifically designed to display a collection of objects in a tabular format with columns and rows. It provides features like sorting, filtering, and pagination."
-        },
-        {
-            "question": "What is the purpose of the 'Commit' activity in a microflow?",
-            "options": [
-                {"text": "To save changes made to an object to the database"},
-                {"text": "To send data to an external system"},
-                {"text": "To create a new object instance"},
-                {"text": "To validate object attributes"}
-            ],
-            "correctAnswer": 0,
-            "feedback": "The Commit activity saves changes made to an object (or multiple objects) to the database. It's necessary to explicitly commit objects for changes to persist."
-        },
-        {
-            "question": "Which of the following is true about Mendix modules?",
-            "options": [
-                {"text": "They can contain other modules"},
-                {"text": "They are deployed independently of each other"},
-                {"text": "They help organize your project into logical units"},
-                {"text": "They cannot share entities with other modules"}
-            ],
-            "correctAnswer": 2,
-            "feedback": "Modules help organize your Mendix project into logical units. While they can contain model elements like entities and microflows, they cannot contain other modules. Entities can be shared between modules using module roles."
-        }
-    ],
-    "exam3": [
-        {
-            "question": "What is the purpose of a nanoflow in Mendix?",
-            "options": [
-                {"text": "To execute complex business logic on the server"},
-                {"text": "To run simple client-side logic in offline apps"},
-                {"text": "To define database schema changes"},
-                {"text": "To configure scheduled events"}
-            ],
-            "correctAnswer": 1,
-            "feedback": "Nanoflows are lightweight microflows that run on the client side, making them ideal for offline applications. They have limited capabilities compared to microflows but can execute without network connectivity."
-        },
-        {
-            "question": "Which security level would you use to restrict access to certain microflows?",
-            "options": [
-                {"text": "Entity access"},
-                {"text": "Module role"},
-                {"text": "User role"},
-                {"text": "Page access"}
-            ],
-            "correctAnswer": 1,
-            "feedback": "Module roles are used to restrict access to microflows. You can specify which module roles can execute a particular microflow in its security settings."
-        },
-        {
-            "question": "What is the correct sequence of events when an object is committed?",
-            "options": [
-                {"text": "Before commit → Validation → After commit"},
-                {"text": "Validation → Before commit → After commit"},
-                {"text": "Before commit → After commit → Validation"},
-                {"text": "Validation → After commit → Before commit"}
-            ],
-            "correctAnswer": 1,
-            "feedback": "The correct sequence is: First validation rules are checked, then the Before commit event runs, the object is saved to the database, and finally the After commit event runs."
-        }
-    ]
+  "exam1": [
+    {
+      "question": "What is the primary purpose of the Mendix Platform?",
+      "options": [
+        {"text": "To create mobile games"},
+        {"text": "To develop enterprise applications rapidly using visual modeling"},
+        {"text": "To manage cloud infrastructure"},
+        {"text": "To design user interfaces for websites"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Mendix is a low-code platform designed for rapid development of enterprise applications using visual modeling tools that minimize traditional coding."
+    },
+    {
+      "question": "Which of these is NOT a core component of the Mendix Studio Pro interface?",
+      "options": [
+        {"text": "Domain Model Editor"},
+        {"text": "Microflow Editor"},
+        {"text": "Page Editor"},
+        {"text": "Code Compiler"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Mendix Studio Pro uses visual modeling tools rather than traditional code compilation. The main components are the Domain Model, Microflow, and Page editors."
+    },
+    {
+      "question": "What is the correct sequence when creating a new Mendix app?",
+      "options": [
+        {"text": "Create domain model → Build pages → Create microflows → Configure security"},
+        {"text": "Configure security → Create domain model → Build pages → Create microflows"},
+        {"text": "Build pages → Create microflows → Create domain model → Configure security"},
+        {"text": "Create microflows → Build pages → Configure security → Create domain model"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The typical workflow starts with defining your data structure (domain model), then building pages to display data, adding logic with microflows, and finally configuring security."
+    },
+    {
+      "question": "Which statement about Mendix modules is TRUE?",
+      "options": [
+        {"text": "Modules can only contain either pages or microflows, not both"},
+        {"text": "Modules help organize your project into logical units"},
+        {"text": "Modules cannot share entities with other modules"},
+        {"text": "Modules are deployed independently of each other"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Modules are used to organize your project into logical units and can contain all types of model elements (pages, microflows, entities, etc.). Entities can be shared between modules using module roles."
+    },
+    {
+      "question": "What is the purpose of an entity in the Mendix domain model?",
+      "options": [
+        {"text": "To define the visual layout of application pages"},
+        {"text": "To represent a table in the application database"},
+        {"text": "To configure integration with external systems"},
+        {"text": "To manage user authentication"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Entities in Mendix represent tables in your application database and define the structure of your data model."
+    },
+    {
+      "question": "Which attribute type would you use to store a monetary value?",
+      "options": [
+        {"text": "String"},
+        {"text": "Integer"},
+        {"text": "Decimal"},
+        {"text": "Boolean"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! The Decimal type is most appropriate for monetary values as it can accurately represent fractional amounts."
+    },
+    {
+      "question": "What is the purpose of an association in the domain model?",
+      "options": [
+        {"text": "To define validation rules for attributes"},
+        {"text": "To establish relationships between entities"},
+        {"text": "To configure security permissions"},
+        {"text": "To create reusable microflow components"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Associations define relationships between entities, similar to foreign keys in traditional databases."
+    },
+    {
+      "question": "Which of these is NOT a valid association type in Mendix?",
+      "options": [
+        {"text": "One-to-one"},
+        {"text": "One-to-many"},
+        {"text": "Many-to-many"},
+        {"text": "Many-to-one"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! While 'many-to-one' is conceptually similar to 'one-to-many', it's not a separate association type in Mendix. The three types are one-to-one, one-to-many, and many-to-many."
+    },
+    {
+      "question": "What is the purpose of the 'Owner' association that's automatically created for persistable entities?",
+      "options": [
+        {"text": "To track which user created the object"},
+        {"text": "To establish inheritance between entities"},
+        {"text": "To configure default sorting"},
+        {"text": "To enable offline synchronization"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Owner association automatically links objects to the user who created them, which is useful for auditing and security purposes."
+    },
+    {
+      "question": "Which of these is NOT a standard system module in a new Mendix app?",
+      "options": [
+        {"text": "Administration"},
+        {"text": "System"},
+        {"text": "MyFirstModule"},
+        {"text": "Security"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! While security features exist, there isn't a standard 'Security' module. The default modules are System, Administration, and MyFirstModule."
+    },
+    {
+      "question": "What is the primary purpose of a microflow?",
+      "options": [
+        {"text": "To define the user interface layout"},
+        {"text": "To model complex business logic and processes"},
+        {"text": "To configure database connections"},
+        {"text": "To manage user roles and permissions"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Microflows are used to model complex business logic and processes in Mendix applications through visual programming."
+    },
+    {
+      "question": "Which element would you use in a microflow to make a decision based on a condition?",
+      "options": [
+        {"text": "Annotation"},
+        {"text": "Decision"},
+        {"text": "Loop"},
+        {"text": "Parameter"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Decision element allows you to branch your microflow based on a condition or expression."
+    },
+    {
+      "question": "What is the purpose of the 'Commit' activity in a microflow?",
+      "options": [
+        {"text": "To save changes made to an object to the database"},
+        {"text": "To send data to an external system"},
+        {"text": "To create a new object instance"},
+        {"text": "To validate object attributes"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Commit activity saves changes made to an object (or multiple objects) to the database."
+    },
+    {
+      "question": "Which microflow activity would you use to show a message to the end user?",
+      "options": [
+        {"text": "Show Message"},
+        {"text": "Show Page"},
+        {"text": "Show Notification"},
+        {"text": "Show Feedback"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The 'Show Message' activity displays a message to the user in a dialog box."
+    },
+    {
+      "question": "What is the difference between a microflow and a nanoflow?",
+      "options": [
+        {"text": "Microflows run on the client, nanoflows run on the server"},
+        {"text": "Microflows run on the server, nanoflows run on the client"},
+        {"text": "Microflows are for batch processing, nanoflows for real-time"},
+        {"text": "Microflows are faster than nanoflows"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Microflows execute on the server while nanoflows run on the client, making nanoflows suitable for offline applications."
+    },
+    {
+      "question": "Which of these is NOT a valid return type for a microflow?",
+      "options": [
+        {"text": "Boolean"},
+        {"text": "String"},
+        {"text": "Integer"},
+        {"text": "All of these are valid return types"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Microflows can return all of these primitive types as well as objects, lists, or nothing (void)."
+    },
+    {
+      "question": "What is the purpose of the 'Retrieve' activity in a microflow?",
+      "options": [
+        {"text": "To get objects from the database"},
+        {"text": "To fetch data from a REST service"},
+        {"text": "To import data from a file"},
+        {"text": "To receive user input"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Retrieve activity gets objects from the database based on specified criteria."
+    },
+    {
+      "question": "Which microflow element would you use to repeat actions for each item in a list?",
+      "options": [
+        {"text": "Decision"},
+        {"text": "Loop"},
+        {"text": "Iterator"},
+        {"text": "Aggregate"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Loop activity allows you to iterate over a list of objects and perform actions for each item."
+    },
+    {
+      "question": "What is the purpose of the 'Rollback' activity in a microflow?",
+      "options": [
+        {"text": "To undo all changes made in the current microflow"},
+        {"text": "To revert the application to a previous version"},
+        {"text": "To navigate back to the previous page"},
+        {"text": "To cancel a scheduled event"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Rollback activity undoes all changes made to objects within the current microflow transaction."
+    },
+    {
+      "question": "Which of these is NOT a valid parameter type for a microflow?",
+      "options": [
+        {"text": "Entity"},
+        {"text": "List of entities"},
+        {"text": "Enumeration"},
+        {"text": "All of these are valid parameter types"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Microflows can accept all of these as parameter types, along with primitive data types."
+    },
+    {
+      "question": "What is the primary purpose of a page in Mendix?",
+      "options": [
+        {"text": "To store business logic"},
+        {"text": "To define the user interface"},
+        {"text": "To configure database schema"},
+        {"text": "To manage security rules"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Pages define the user interface that end users interact with in a Mendix application."
+    },
+    {
+      "question": "Which layout type would you use for a responsive page that adapts to different screen sizes?",
+      "options": [
+        {"text": "Legacy"},
+        {"text": "Responsive"},
+        {"text": "Table-based"},
+        {"text": "Fixed"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Responsive layout type automatically adapts to different screen sizes and devices."
+    },
+    {
+      "question": "What is the purpose of a data view on a page?",
+      "options": [
+        {"text": "To display a single object"},
+        {"text": "To show a list of objects"},
+        {"text": "To create a chart visualization"},
+        {"text": "To configure page navigation"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! A data view displays and allows editing of a single object, while a list view shows multiple objects."
+    },
+    {
+      "question": "Which widget would you use to display a collection of objects in a tabular format?",
+      "options": [
+        {"text": "Data view"},
+        {"text": "Template grid"},
+        {"text": "Data grid"},
+        {"text": "List view"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! The Data grid widget displays objects in a structured table format with columns and rows."
+    },
+    {
+      "question": "What is the purpose of the 'context' property of a page?",
+      "options": [
+        {"text": "To define which entity the page will display"},
+        {"text": "To configure the page's security settings"},
+        {"text": "To determine the page's layout type"},
+        {"text": "To set the page's background color"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The context entity defines what type of object the page will work with and receive as input."
+    },
+    {
+      "question": "Which navigation option would you use to open a page in a popup window?",
+      "options": [
+        {"text": "Show page"},
+        {"text": "Open page"},
+        {"text": "Popup page"},
+        {"text": "Show popup"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! The 'Show popup' navigation option opens a page in a modal dialog/popup window."
+    },
+    {
+      "question": "What is the purpose of a snippet in Mendix page design?",
+      "options": [
+        {"text": "To store reusable page fragments"},
+        {"text": "To define microflow parameters"},
+        {"text": "To configure entity validation"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Snippets are reusable page fragments that can be used across multiple pages."
+    },
+    {
+      "question": "Which widget property would you use to make a field required?",
+      "options": [
+        {"text": "Editable"},
+        {"text": "Visible"},
+        {"text": "Required"},
+        {"text": "Validate"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! The 'Required' property ensures a field must be filled in before the form can be submitted."
+    },
+    {
+      "question": "What is the purpose of the 'on change' event for an input widget?",
+      "options": [
+        {"text": "To trigger an action when the widget's value changes"},
+        {"text": "To validate the input when the form is submitted"},
+        {"text": "To configure the widget's default value"},
+        {"text": "To determine when the widget is visible"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The 'on change' event triggers whenever the widget's value is modified by the user."
+    },
+    {
+      "question": "Which security concept in Mendix controls what data a user can access?",
+      "options": [
+        {"text": "Module roles"},
+        {"text": "Entity access rules"},
+        {"text": "Page access rules"},
+        {"text": "Microflow access rules"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Entity access rules determine what data users can see and modify based on their roles."
+    },
+    {
+      "question": "What is the purpose of a user role in Mendix security?",
+      "options": [
+        {"text": "To define a set of permissions that can be assigned to users"},
+        {"text": "To configure integration with external authentication systems"},
+        {"text": "To determine the application's default language"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! User roles define sets of permissions that can be assigned to users to control their access within the application."
+    },
+    {
+      "question": "Which of these is NOT a standard entity access right?",
+      "options": [
+        {"text": "Create"},
+        {"text": "Read"},
+        {"text": "Update"},
+        {"text": "Archive"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! The standard entity access rights are Create, Read, Update, and Delete. 'Archive' is not a standard access right."
+    },
+    {
+      "question": "What is the purpose of XPath constraints in entity access rules?",
+      "options": [
+        {"text": "To limit which objects a user can access based on conditions"},
+        {"text": "To define validation rules for attributes"},
+        {"text": "To configure database indexes"},
+        {"text": "To determine page navigation flows"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! XPath constraints filter which objects users can access based on specified conditions."
+    },
+    {
+      "question": "Which security level would you use to restrict access to certain microflows?",
+      "options": [
+        {"text": "Entity access"},
+        {"text": "Module role"},
+        {"text": "User role"},
+        {"text": "Page access"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Module roles are used to control access to microflows by specifying which roles can execute them."
+    },
+    {
+      "question": "What is the purpose of the 'Anonymous' user role?",
+      "options": [
+        {"text": "To grant full access to all application features"},
+        {"text": "To provide limited access to users who aren't logged in"},
+        {"text": "To configure administrator accounts"},
+        {"text": "To integrate with external authentication providers"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Anonymous role defines what unauthenticated users can access in your application."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix authentication method?",
+      "options": [
+        {"text": "Username and password"},
+        {"text": "LDAP"},
+        {"text": "OAuth 2.0"},
+        {"text": "Facial recognition"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! While Mendix supports various authentication methods, facial recognition is not a standard option."
+    },
+    {
+      "question": "What is the purpose of a scheduled event in Mendix?",
+      "options": [
+        {"text": "To execute microflows at specific times or intervals"},
+        {"text": "To trigger page navigation based on user actions"},
+        {"text": "To configure database backups"},
+        {"text": "To manage user session timeouts"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Scheduled events run microflows at defined times or intervals, useful for batch processing."
+    },
+    {
+      "question": "Which of these is NOT a valid interval for a scheduled event?",
+      "options": [
+        {"text": "Hourly"},
+        {"text": "Daily"},
+        {"text": "Weekly"},
+        {"text": "Quarterly"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Scheduled events can run hourly, daily, weekly, monthly, or yearly, but not quarterly by default."
+    },
+    {
+      "question": "What is the purpose of the 'Constants' folder in a Mendix module?",
+      "options": [
+        {"text": "To store values that don't change during runtime"},
+        {"text": "To define entity validation rules"},
+        {"text": "To configure microflow parameters"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Constants store configuration values that remain the same throughout the application's runtime."
+    },
+    {
+      "question": "Which file format would you use to import data into a Mendix application?",
+      "options": [
+        {"text": "Excel (XLS/XLSX)"},
+        {"text": "CSV"},
+        {"text": "XML"},
+        {"text": "All of the above"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Mendix supports importing data from Excel, CSV, and XML files."
+    },
+    {
+      "question": "What is the purpose of the 'App Store' in Mendix?",
+      "options": [
+        {"text": "To purchase commercial applications"},
+        {"text": "To download and share reusable modules, widgets, and connectors"},
+        {"text": "To manage user subscriptions"},
+        {"text": "To configure payment gateways"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Mendix App Store contains reusable components that can accelerate development."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix deployment option?",
+      "options": [
+        {"text": "Mendix Cloud"},
+        {"text": "Private Cloud"},
+        {"text": "On-premises"},
+        {"text": "Blockchain"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! While Mendix supports various deployment options, blockchain is not a standard deployment target."
+    },
+    {
+      "question": "What is the purpose of the 'Team Server' in Mendix?",
+      "options": [
+        {"text": "To host the running application"},
+        {"text": "To provide version control and collaborative development"},
+        {"text": "To manage user authentication"},
+        {"text": "To store application logs"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Team Server provides SVN-based version control for collaborative development."
+    },
+    {
+      "question": "Which tool would you use to monitor a running Mendix application?",
+      "options": [
+        {"text": "Mendix Studio Pro"},
+        {"text": "Mendix Developer Portal"},
+        {"text": "Mendix Runtime"},
+        {"text": "Mendix Debugger"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Mendix Developer Portal provides monitoring tools for running applications."
+    },
+    {
+      "question": "What is the purpose of a REST service in Mendix?",
+      "options": [
+        {"text": "To integrate with external systems using REST APIs"},
+        {"text": "To configure database replication"},
+        {"text": "To manage user sessions"},
+        {"text": "To create scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! REST services allow Mendix apps to consume or expose RESTful APIs for integration."
+    },
+    {
+      "question": "Which of these is NOT a valid REST operation type?",
+      "options": [
+        {"text": "GET"},
+        {"text": "POST"},
+        {"text": "DELETE"},
+        {"text": "COPY"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! While GET, POST, PUT, DELETE are standard REST operations, COPY is not."
+    },
+    {
+      "question": "What is the purpose of the 'Call REST service' activity in a microflow?",
+      "options": [
+        {"text": "To consume an external REST API"},
+        {"text": "To expose a Mendix microflow as a REST service"},
+        {"text": "To configure database connections"},
+        {"text": "To manage user authentication"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The 'Call REST service' activity allows your app to consume external REST APIs."
+    },
+    {
+      "question": "Which file format is typically used for data exchange in REST services?",
+      "options": [
+        {"text": "JSON"},
+        {"text": "XML"},
+        {"text": "CSV"},
+        {"text": "Both JSON and XML"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! REST services commonly use both JSON and XML for data exchange."
+    },
+    {
+      "question": "What is the purpose of the 'Published REST service' in Mendix?",
+      "options": [
+        {"text": "To allow external systems to call Mendix microflows via REST"},
+        {"text": "To configure scheduled events"},
+        {"text": "To manage database backups"},
+        {"text": "To integrate with email services"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Published REST services expose Mendix microflows as REST endpoints for external consumption."
+    }
+  ],
+  "exam2": [
+    {
+      "question": "Which of these is NOT a core principle of Mendix's model-driven development?",
+      "options": [
+        {"text": "Visual modeling"},
+        {"text": "Manual coding for all functionality"},
+        {"text": "Reusability"},
+        {"text": "Collaboration"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Mendix emphasizes visual modeling over manual coding, though custom code can be added when needed."
+    },
+    {
+      "question": "What is the purpose of the 'System' module in Mendix?",
+      "options": [
+        {"text": "To contain all business logic"},
+        {"text": "To provide core system entities and microflows"},
+        {"text": "To configure deployment settings"},
+        {"text": "To manage user interface themes"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The System module contains core system entities like 'User' and essential microflows."
+    },
+    {
+      "question": "Which of these is NOT a valid entity property?",
+      "options": [
+        {"text": "Persistable"},
+        {"text": "Cached"},
+        {"text": "Remote"},
+        {"text": "Transient"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Entities can be persistable (stored in database), remote (from external systems), or transient (in-memory only), but not 'Cached'."
+    },
+    {
+      "question": "What is the purpose of the 'Generalization' relationship between entities?",
+      "options": [
+        {"text": "To implement inheritance between entities"},
+        {"text": "To create a many-to-many association"},
+        {"text": "To configure database indexes"},
+        {"text": "To define validation rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Generalization creates an inheritance relationship between entities (superclass/subclass)."
+    },
+    {
+      "question": "Which of these is NOT a standard event for a persistable entity?",
+      "options": [
+        {"text": "Before commit"},
+        {"text": "After commit"},
+        {"text": "Before retrieve"},
+        {"text": "After delete"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Standard entity events are Before/After commit and Before/After delete. There is no 'Before retrieve' event."
+    },
+    {
+      "question": "What is the purpose of enumerations in the domain model?",
+      "options": [
+        {"text": "To define a set of predefined values for an attribute"},
+        {"text": "To create database tables"},
+        {"text": "To configure microflow parameters"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Enumerations define sets of allowed values that can be used as attribute types."
+    },
+    {
+      "question": "Which microflow activity would you use to create a new object instance?",
+      "options": [
+        {"text": "Create Object"},
+        {"text": "New Instance"},
+        {"text": "Generate Entity"},
+        {"text": "Make Object"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The 'Create Object' activity instantiates a new object of the specified entity type."
+    },
+    {
+      "question": "What is the purpose of the 'Change Object' activity in a microflow?",
+      "options": [
+        {"text": "To modify attribute values of an object"},
+        {"text": "To convert an object to a different entity type"},
+        {"text": "To move an object to a different module"},
+        {"text": "To delete an object"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'Change Object' allows you to modify an object's attribute values."
+    },
+    {
+      "question": "Which microflow activity would you use to delete an object from the database?",
+      "options": [
+        {"text": "Remove Object"},
+        {"text": "Delete Object"},
+        {"text": "Erase Object"},
+        {"text": "Destroy Object"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The 'Delete Object' activity removes an object from the database."
+    },
+    {
+      "question": "What is the purpose of the 'Aggregate List' activity in a microflow?",
+      "options": [
+        {"text": "To perform calculations on a list of objects"},
+        {"text": "To combine multiple lists into one"},
+        {"text": "To group objects by an attribute"},
+        {"text": "To sort a list of objects"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'Aggregate List' calculates sums, averages, etc. on object lists."
+    },
+    {
+      "question": "Which microflow activity would you use to end the microflow and return a value?",
+      "options": [
+        {"text": "End Event"},
+        {"text": "Return Value"},
+        {"text": "Stop Microflow"},
+        {"text": "Exit"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The 'Return Value' activity ends the microflow and returns a specified value."
+    },
+    {
+      "question": "What is the purpose of the 'Error Event' in a microflow?",
+      "options": [
+        {"text": "To handle exceptions that occur during execution"},
+        {"text": "To validate user input"},
+        {"text": "To log error messages"},
+        {"text": "To display error pages"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Error Events handle exceptions that occur during microflow execution."
+    },
+    {
+      "question": "Which of these is NOT a valid microflow parameter?",
+      "options": [
+        {"text": "Object"},
+        {"text": "List"},
+        {"text": "Enumeration"},
+        {"text": "All are valid parameter types"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Microflows can accept all these as parameter types."
+    },
+    {
+      "question": "What is the purpose of a sub-microflow?",
+      "options": [
+        {"text": "To break down complex logic into reusable components"},
+        {"text": "To run microflows on the client side"},
+        {"text": "To configure scheduled events"},
+        {"text": "To manage security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Sub-microflows encapsulate reusable logic that can be called from multiple places."
+    },
+    {
+      "question": "Which of these is NOT a standard nanoflow activity?",
+      "options": [
+        {"text": "Show Message"},
+        {"text": "Commit Object"},
+        {"text": "Call REST Service"},
+        {"text": "Delete Object"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Nanoflows cannot call REST services directly as they run on the client."
+    },
+    {
+      "question": "What is the purpose of the 'Close Page' activity in a nanoflow?",
+      "options": [
+        {"text": "To exit the application"},
+        {"text": "To close the current popup or page"},
+        {"text": "To log out the user"},
+        {"text": "To cancel a microflow"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'Close Page' closes the current popup or page in a nanoflow."
+    },
+    {
+      "question": "Which layout would you use for a page that should scroll vertically?",
+      "options": [
+        {"text": "ScrollContainer"},
+        {"text": "ListView"},
+        {"text": "DataView"},
+        {"text": "LayoutGrid"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The ScrollContainer provides vertical scrolling for its contents."
+    },
+    {
+      "question": "What is the purpose of the 'Snippet Call' widget?",
+      "options": [
+        {"text": "To include a reusable snippet on a page"},
+        {"text": "To trigger a microflow"},
+        {"text": "To display system messages"},
+        {"text": "To configure page navigation"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Snippet Call widget inserts a snippet into a page."
+    },
+    {
+      "question": "Which widget would you use to display a progress indicator?",
+      "options": [
+        {"text": "Progress Bar"},
+        {"text": "Loading Indicator"},
+        {"text": "Status Widget"},
+        {"text": "Activity Monitor"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The Loading Indicator widget shows progress for asynchronous operations."
+    },
+    {
+      "question": "What is the purpose of the 'Validation Feedback' widget?",
+      "options": [
+        {"text": "To display validation messages for a data view"},
+        {"text": "To validate user input in microflows"},
+        {"text": "To configure entity validation rules"},
+        {"text": "To test page layouts"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Validation Feedback widget shows validation messages for a data view."
+    },
+    {
+      "question": "Which widget property would you use to control visibility based on an expression?",
+      "options": [
+        {"text": "Visible"},
+        {"text": "Editable"},
+        {"text": "Conditional"},
+        {"text": "Render"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The 'Visible' property can be set based on an expression."
+    },
+    {
+      "question": "What is the purpose of the 'Data Source' property for a list widget?",
+      "options": [
+        {"text": "To specify where the widget gets its data"},
+        {"text": "To configure database connections"},
+        {"text": "To define REST service endpoints"},
+        {"text": "To manage file uploads"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Data Source determines how the widget populates with data."
+    },
+    {
+      "question": "Which navigation option would you use to open a page in the current window?",
+      "options": [
+        {"text": "Show page"},
+        {"text": "Open page"},
+        {"text": "Navigate to"},
+        {"text": "Display page"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'Open page' replaces the current page, while 'Show page' adds to the navigation history."
+    },
+    {
+      "question": "What is the purpose of the 'Home Page' setting in navigation?",
+      "options": [
+        {"text": "To define the first page users see after login"},
+        {"text": "To configure the application logo"},
+        {"text": "To set the default theme"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Home Page is the default page shown after login."
+    },
+    {
+      "question": "Which of these is NOT a standard security level in Mendix?",
+      "options": [
+        {"text": "None"},
+        {"text": "Prototype/demo"},
+        {"text": "Production"},
+        {"text": "Enterprise"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Standard security levels are None, Prototype/demo, and Production."
+    },
+    {
+      "question": "What is the purpose of the 'Demo Users' feature?",
+      "options": [
+        {"text": "To provide test accounts for demonstration purposes"},
+        {"text": "To configure administrator accounts"},
+        {"text": "To manage user feedback"},
+        {"text": "To integrate with external authentication"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Demo Users are predefined test accounts for demonstration."
+    },
+    {
+      "question": "Which of these is NOT a standard password policy option?",
+      "options": [
+        {"text": "Minimum length"},
+        {"text": "Require numbers"},
+        {"text": "Require special characters"},
+        {"text": "Maximum age"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Mendix doesn't enforce password maximum age by default."
+    },
+    {
+      "question": "What is the purpose of the 'Sign-in' microflow?",
+      "options": [
+        {"text": "To customize the authentication process"},
+        {"text": "To configure scheduled events"},
+        {"text": "To manage database connections"},
+        {"text": "To define page layouts"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The Sign-in microflow allows customization of the login process."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix runtime setting?",
+      "options": [
+        {"text": "Session timeout"},
+        {"text": "Log levels"},
+        {"text": "Database connection"},
+        {"text": "Page caching"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Mendix doesn't have standard page caching settings at runtime."
+    },
+    {
+      "question": "What is the purpose of the 'Custom Settings' feature?",
+      "options": [
+        {"text": "To store configuration values that can be changed at runtime"},
+        {"text": "To define entity validation rules"},
+        {"text": "To configure microflow parameters"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Custom Settings store configurable values that can be modified without redeploying."
+    },
+    {
+      "question": "Which of these is NOT a valid scheduled event trigger?",
+      "options": [
+        {"text": "On application startup"},
+        {"text": "Daily at specific time"},
+        {"text": "When a microflow completes"},
+        {"text": "Every hour"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Scheduled events can't trigger based on microflow completion."
+    },
+    {
+      "question": "What is the purpose of the 'Import Mapping' feature?",
+      "options": [
+        {"text": "To define how external data maps to Mendix entities"},
+        {"text": "To configure database schema"},
+        {"text": "To manage page navigation"},
+        {"text": "To define security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Import Mappings define how external data (XML, JSON) maps to entities."
+    },
+    {
+      "question": "Which of these is NOT a standard export format?",
+      "options": [
+        {"text": "Excel"},
+        {"text": "CSV"},
+        {"text": "XML"},
+        {"text": "PDF"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Standard export formats are Excel, CSV, and XML."
+    },
+    {
+      "question": "What is the purpose of the 'App Services' feature?",
+      "options": [
+        {"text": "To consume external APIs and services"},
+        {"text": "To configure scheduled events"},
+        {"text": "To manage database backups"},
+        {"text": "To define page layouts"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! App Services simplify consuming external APIs (REST, SOAP, OData)."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix Cloud region?",
+      "options": [
+        {"text": "North America"},
+        {"text": "Europe"},
+        {"text": "Asia Pacific"},
+        {"text": "South America"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Mendix Cloud isn't currently available in South America."
+    },
+    {
+      "question": "What is the purpose of the 'Deployment Package'?",
+      "options": [
+        {"text": "A compressed file containing the application for deployment"},
+        {"text": "A collection of modules for reuse"},
+        {"text": "A set of database scripts"},
+        {"text": "A configuration for scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Deployment Packages are .mda files containing the app for deployment."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix deployment phase?",
+      "options": [
+        {"text": "Development"},
+        {"text": "Acceptance"},
+        {"text": "Production"},
+        {"text": "Archival"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Standard phases are Development, Acceptance, and Production."
+    },
+    {
+      "question": "What is the purpose of the 'Transport' security level for REST services?",
+      "options": [
+        {"text": "To encrypt data in transit using HTTPS"},
+        {"text": "To configure database encryption"},
+        {"text": "To manage user authentication"},
+        {"text": "To define page access rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Transport security enforces HTTPS for REST service communication."
+    },
+    {
+      "question": "Which of these is NOT a standard OData resource?",
+      "options": [
+        {"text": "EntitySet"},
+        {"text": "Singleton"},
+        {"text": "FunctionImport"},
+        {"text": "DataView"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! DataView is a Mendix widget, not an OData concept."
+    },
+    {
+      "question": "What is the purpose of the 'Consumed OData Service' feature?",
+      "options": [
+        {"text": "To consume external OData services in your Mendix app"},
+        {"text": "To expose Mendix entities as OData services"},
+        {"text": "To configure database replication"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Consumed OData Services allow your app to use external OData APIs."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix debugging tool?",
+      "options": [
+        {"text": "Microflow debugger"},
+        {"text": "Log viewer"},
+        {"text": "Database profiler"},
+        {"text": "Breakpoints"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Mendix doesn't have a standard database profiler tool."
+    },
+    {
+      "question": "What is the purpose of the 'Show Log Message' activity in a microflow?",
+      "options": [
+        {"text": "To write custom messages to the application log"},
+        {"text": "To display messages to end users"},
+        {"text": "To send email notifications"},
+        {"text": "To configure scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'Show Log Message' writes to the application log for debugging."
+    },
+    {
+      "question": "Which of these is NOT a standard log level in Mendix?",
+      "options": [
+        {"text": "Trace"},
+        {"text": "Debug"},
+        {"text": "Warning"},
+        {"text": "Notice"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Standard levels are Trace, Debug, Info, Warning, Error, Critical."
+    }
+  ],
+  "exam3": [
+    {
+      "question": "What is the correct sequence of events when an object is committed?",
+      "options": [
+        {"text": "Before commit → Validation → After commit"},
+        {"text": "Validation → Before commit → After commit"},
+        {"text": "Before commit → After commit → Validation"},
+        {"text": "Validation → After commit → Before commit"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! First validation occurs, then Before commit, database save, then After commit."
+    },
+    {
+      "question": "Which of these is NOT a best practice for microflow design?",
+      "options": [
+        {"text": "Keep microflows small and focused"},
+        {"text": "Use sub-microflows for reusable logic"},
+        {"text": "Include all business logic in a single microflow"},
+        {"text": "Add annotations for complex logic"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Microflows should be modular, not monolithic."
+    },
+    {
+      "question": "What is the purpose of the 'Commit Object(s)' activity in a microflow?",
+      "options": [
+        {"text": "To save changes to the database"},
+        {"text": "To send objects to another microflow"},
+        {"text": "To validate objects"},
+        {"text": "To create backup copies"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Commit saves changes to the database."
+    },
+    {
+      "question": "Which of these is NOT a valid microflow return type?",
+      "options": [
+        {"text": "Boolean"},
+        {"text": "List of entities"},
+        {"text": "Image"},
+        {"text": "Void"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Microflows can't directly return images."
+    },
+    {
+      "question": "What is the purpose of the 'Exclusive Split' in a microflow?",
+      "options": [
+        {"text": "To evaluate multiple conditions and take one path"},
+        {"text": "To run multiple paths in parallel"},
+        {"text": "To combine multiple flows"},
+        {"text": "To handle errors"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Exclusive Split evaluates conditions to choose one path."
+    },
+    {
+      "question": "Which of these is NOT a valid inheritance strategy for entities?",
+      "options": [
+        {"text": "Single table inheritance"},
+        {"text": "Class table inheritance"},
+        {"text": "Concrete table inheritance"},
+        {"text": "Multiple table inheritance"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! The three strategies are Single, Class, and Concrete table."
+    },
+    {
+      "question": "What is the purpose of the 'Delete Behavior' property in associations?",
+      "options": [
+        {"text": "To control what happens when an object is deleted"},
+        {"text": "To define validation rules"},
+        {"text": "To configure database indexes"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Delete Behavior defines cascade delete rules."
+    },
+    {
+      "question": "Which of these is NOT a standard delete behavior option?",
+      "options": [
+        {"text": "Delete"},
+        {"text": "Delete {object} if no other objects refer to it"},
+        {"text": "Keep {object}"},
+        {"text": "Archive {object}"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Archive is not a standard delete behavior."
+    },
+    {
+      "question": "What is the purpose of the 'Indexed' property for attributes?",
+      "options": [
+        {"text": "To improve query performance"},
+        {"text": "To enforce uniqueness"},
+        {"text": "To configure validation"},
+        {"text": "To manage security"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Indexes improve query performance on frequently searched attributes."
+    },
+    {
+      "question": "Which of these is NOT a recommended use case for nanoflows?",
+      "options": [
+        {"text": "Simple client-side logic"},
+        {"text": "Offline applications"},
+        {"text": "Complex server-side calculations"},
+        {"text": "Immediate UI feedback"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Complex calculations should be in microflows on the server."
+    },
+    {
+      "question": "What is the purpose of the 'Validation Feedback' widget?",
+      "options": [
+        {"text": "To display validation messages"},
+        {"text": "To validate microflows"},
+        {"text": "To test database connections"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It shows validation messages to users."
+    },
+    {
+      "question": "Which of these is NOT a standard data view property?",
+      "options": [
+        {"text": "Entity"},
+        {"text": "Data source"},
+        {"text": "Page size"},
+        {"text": "Read-only"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Page size is a list property, not data view."
+    },
+    {
+      "question": "What is the purpose of the 'Listen To Widget' action?",
+      "options": [
+        {"text": "To trigger microflows/nanoflows on client-side events"},
+        {"text": "To configure audio playback"},
+        {"text": "To manage scheduled events"},
+        {"text": "To test database connections"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It handles client-side events like clicks."
+    },
+    {
+      "question": "Which of these is NOT a standard security constraint type?",
+      "options": [
+        {"text": "XPath constraint"},
+        {"text": "Java constraint"},
+        {"text": "Microflow constraint"},
+        {"text": "Database constraint"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Standard constraints are XPath and Java."
+    },
+    {
+      "question": "What is the purpose of the 'Password' attribute type?",
+      "options": [
+        {"text": "To securely store hashed passwords"},
+        {"text": "To validate password complexity"},
+        {"text": "To encrypt database connections"},
+        {"text": "To manage scheduled events"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It stores hashed passwords securely."
+    },
+    {
+      "question": "Which of these is NOT a standard scheduled event frequency?",
+      "options": [
+        {"text": "Minutely"},
+        {"text": "Hourly"},
+        {"text": "Weekly"},
+        {"text": "Quarterly"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Standard frequencies don't include quarterly."
+    },
+    {
+      "question": "What is the purpose of the 'Input' action in a nanoflow?",
+      "options": [
+        {"text": "To get user input via a dialog"},
+        {"text": "To import data"},
+        {"text": "To configure scheduled events"},
+        {"text": "To manage database connections"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It shows input dialogs to users."
+    },
+    {
+      "question": "Which of these is NOT a standard REST HTTP method?",
+      "options": [
+        {"text": "GET"},
+        {"text": "POST"},
+        {"text": "UPDATE"},
+        {"text": "DELETE"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Standard methods are GET, POST, PUT, DELETE, etc."
+    },
+    {
+      "question": "What is the purpose of the 'Location' header in REST responses?",
+      "options": [
+        {"text": "To indicate the URL of a newly created resource"},
+        {"text": "To configure geolocation services"},
+        {"text": "To manage database connections"},
+        {"text": "To define page navigation"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Location header provides the URL of new resources."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix deployment option?",
+      "options": [
+        {"text": "Mendix Cloud"},
+        {"text": "Private Cloud"},
+        {"text": "On-premises"},
+        {"text": "Serverless"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Mendix doesn't support serverless deployment."
+    },
+    {
+      "question": "What is the purpose of the 'After Startup' microflow?",
+      "options": [
+        {"text": "To perform initialization tasks when the app starts"},
+        {"text": "To configure scheduled events"},
+        {"text": "To manage database connections"},
+        {"text": "To define security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It runs initialization logic after app startup."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix debugging tool?",
+      "options": [
+        {"text": "Microflow debugger"},
+        {"text": "Log viewer"},
+        {"text": "Database explorer"},
+        {"text": "Breakpoints"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Mendix doesn't have a standard database explorer."
+    },
+    {
+      "question": "What is the purpose of the 'Show Home Page' action?",
+      "options": [
+        {"text": "To navigate to the application's home page"},
+        {"text": "To configure the home page setting"},
+        {"text": "To manage scheduled events"},
+        {"text": "To test database connections"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It navigates to the configured home page."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix team development feature?",
+      "options": [
+        {"text": "Branching"},
+        {"text": "Merging"},
+        {"text": "Conflict resolution"},
+        {"text": "Real-time co-editing"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Mendix doesn't support real-time co-editing."
+    },
+    {
+      "question": "What is the purpose of the 'Export to Excel' button?",
+      "options": [
+        {"text": "To export grid data to Excel"},
+        {"text": "To configure Excel integration"},
+        {"text": "To manage scheduled events"},
+        {"text": "To test database connections"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It exports grid data to Excel format."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix performance tool?",
+      "options": [
+        {"text": "Performance analyzer"},
+        {"text": "Query recorder"},
+        {"text": "Database profiler"},
+        {"text": "Log viewer"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Mendix doesn't have a standard database profiler."
+    },
+    {
+      "question": "What is the purpose of the 'Offline' profile?",
+      "options": [
+        {"text": "To enable offline functionality for mobile apps"},
+        {"text": "To configure scheduled events"},
+        {"text": "To manage database connections"},
+        {"text": "To define security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It enables offline capabilities."
+    },
+    {
+      "question": "Which of these is NOT a standard mobile navigation pattern?",
+      "options": [
+        {"text": "Tab bar"},
+        {"text": "Sidebar"},
+        {"text": "Flyout menu"},
+        {"text": "Radial menu"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Radial menu isn't a standard Mendix pattern."
+    },
+    {
+      "question": "What is the purpose of the 'Deep Link' feature?",
+      "options": [
+        {"text": "To open specific pages via URLs"},
+        {"text": "To configure database connections"},
+        {"text": "To manage scheduled events"},
+        {"text": "To define security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Deep links open specific app pages via URLs."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix testing approach?",
+      "options": [
+        {"text": "Unit testing"},
+        {"text": "Integration testing"},
+        {"text": "User acceptance testing"},
+        {"text": "Load testing"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Mendix focuses more on integration/UAT than unit testing."
+    },
+    {
+      "question": "What is the purpose of the 'A/B Testing' module?",
+      "options": [
+        {"text": "To compare different versions of pages"},
+        {"text": "To configure database connections"},
+        {"text": "To manage scheduled events"},
+        {"text": "To define security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! It enables comparing page variations."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix documentation type?",
+      "options": [
+        {"text": "User stories"},
+        {"text": "Entity-relationship diagrams"},
+        {"text": "Microflow documentation"},
+        {"text": "JavaDoc"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! JavaDoc isn't relevant for visual modeling."
+    },
+    {
+      "question": "What is the purpose of the 'Mendix Assist' feature?",
+      "options": [
+        {"text": "To provide AI-powered development suggestions"},
+        {"text": "To configure database connections"},
+        {"text": "To manage scheduled events"},
+        {"text": "To define security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Mendix Assist offers AI-powered suggestions."
+    },
+    {
+      "question": "Which of these is NOT a standard Mendix community resource?",
+      "options": [
+        {"text": "Mendix Forum"},
+        {"text": "Mendix Developer Portal"},
+        {"text": "Mendix Slack channels"},
+        {"text": "Mendix Stack Overflow"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! There's no dedicated Mendix Stack Overflow."
+    },
+    {
+      "question": "What is the purpose of the 'Mendix Academy'?",
+      "options": [
+        {"text": "To provide free online learning resources"},
+        {"text": "To configure database connections"},
+        {"text": "To manage scheduled events"},
+        {"text": "To define security rules"}
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! Mendix Academy offers free learning materials."
+    },
+    {
+      "question": "Which of these is NOT a standard Rapid Developer exam topic?",
+      "options": [
+        {"text": "Domain Modeling"},
+        {"text": "Microflows"},
+        {"text": "Page Design"},
+        {"text": "Machine Learning"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Machine Learning isn't covered in the Rapid Developer exam."
+    },
+    {
+      "question": "What is the passing score for the Mendix Rapid Developer exam?",
+      "options": [
+        {"text": "60%"},
+        {"text": "70%"},
+        {"text": "75%"},
+        {"text": "80%"}
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! The passing score is 75%."
+    },
+    {
+      "question": "How many questions are on the Mendix Rapid Developer exam?",
+      "options": [
+        {"text": "40"},
+        {"text": "50"},
+        {"text": "60"},
+        {"text": "70"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The exam contains 50 questions."
+    },
+    {
+      "question": "What is the time limit for the Mendix Rapid Developer exam?",
+      "options": [
+        {"text": "30 minutes"},
+        {"text": "60 minutes"},
+        {"text": "90 minutes"},
+        {"text": "120 minutes"}
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! The time limit is 60 minutes."
+    },
+    {
+      "question": "Which of these is NOT a recommended study resource for the Rapid Developer exam?",
+      "options": [
+        {"text": "Mendix Documentation"},
+        {"text": "Mendix Academy Learning Paths"},
+        {"text": "Mendix Community Forum"},
+        {"text": "Third-party certification dumps"}
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! Certification dumps violate Mendix's exam policies."
+    }
+  ]
 }

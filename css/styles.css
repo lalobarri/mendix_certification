@@ -138,3 +138,254 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+/* Estilos para la sección de introducción a los exámenes */
+.exam-intro {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.exam-intro .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.exam-intro h2 {
+  color: #003b5c;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.exam-intro p {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Estilos para la cuadrícula de exámenes */
+.exam-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Estilos para las tarjetas de examen */
+.exam-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.exam-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.exam-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+
+/* Iconos y colores para cada nivel */
+.exam-card[data-exam="1"]::before {
+  background-color: #28a745; /* Verde para básico */
+}
+
+.exam-card[data-exam="1"] .exam-icon {
+  color: #28a745;
+}
+
+.exam-card[data-exam="2"]::before {
+  background-color: #ffc107; /* Amarillo para intermedio */
+}
+
+.exam-card[data-exam="2"] .exam-icon {
+  color: #ffc107;
+}
+
+.exam-card[data-exam="3"]::before {
+  background-color: #dc3545; /* Rojo para avanzado */
+}
+
+.exam-card[data-exam="3"] .exam-icon {
+  color: #dc3545;
+}
+
+.exam-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.exam-card:hover .exam-icon {
+  transform: scale(1.1);
+}
+
+.exam-card h3 {
+  color: #003b5c;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.exam-level {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.exam-card[data-exam="1"] .exam-level {
+  color: #28a745;
+}
+
+.exam-card[data-exam="2"] .exam-level {
+  color: #ffc107;
+}
+
+.exam-card[data-exam="3"] .exam-level {
+  color: #dc3545;
+}
+
+.exam-card p {
+  color: #6c757d;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* Estilos para el botón de comenzar examen */
+.btn-start-exam {
+  background-color: #00a1e0;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-start-exam::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-start-exam:hover {
+  background-color: #0088c0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-start-exam:hover::before {
+  width: 100%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+  .exam-intro {
+    padding: 50px 0;
+  }
+  
+  .exam-intro h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .exam-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .exam-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .exam-intro {
+    padding: 40px 0;
+  }
+  
+  .exam-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .exam-intro h2 {
+    font-size: 1.8rem;
+  }
+  
+  .exam-intro p {
+    font-size: 1rem;
+  }
+  
+  .btn-start-exam {
+    padding: 10px 20px;
+  }
+  
+  .exam-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.exam-card {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.exam-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.exam-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.exam-card:nth-child(3) {
+  animation-delay: 0.3s;
+}

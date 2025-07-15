@@ -175,48 +175,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Función para finalizar el examen
-    function finishExam() {
-        // Detener temporizador
-        stopTimer();
-        
-        // Calcular resultados
-        const examQuestions = examData[`exam${currentExam}`];
-        let correctCount = 0;
-        
-        userAnswers.forEach((answer, index) => {
-            if (answer === examQuestions[index].correctAnswer) {
-                correctCount++;
-            }
-        });
-        
-        const score = Math.round((correctCount / 50) * 100);
-        const timeUsed = Math.floor((new Date() - examStartTime) / 1000);
-        const minutes = Math.floor(timeUsed / 60);
-        const seconds = timeUsed % 60;
-        
-        // Mostrar resultados
-        finalScoreSpan.textContent = score;
-        correctAnswersSpan.textContent = correctCount;
-        incorrectAnswersSpan.textContent = 50 - correctCount;
-        timeUsedSpan.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        
-        // Mensaje basado en el puntaje
-        if (score >= 80) {
-            scoreMessage.textContent = '¡Excelente trabajo! Estás listo para la certificación.';
-        } else if (score >= 60) {
-            scoreMessage.textContent = 'Buen intento, pero necesitas más práctica. Revisa las áreas débiles.';
-        } else {
-            scoreMessage.textContent = 'Necesitas más estudio antes de intentar el examen real.';
-        }
-        
-        // Generar recomendaciones
-        generateRecommendations(correctCount, examQuestions);
-        
-        // Mostrar modal de resultados
-        examModal.style.display = 'none';
-        resultsModal.style.display = 'block';
+   function finishExam() {
+  // Calcular resultados
+  const examQuestions = examData[`exam${currentExam}`];
+  let correctCount = 0;
+  
+  userAnswers.forEach((answer, index) => {
+    if (answer === examQuestions[index].correctAnswer) {
+      correctCount++;
     }
+  });
+  
+  const score = Math.round((correctCount / examQuestions.length) * 100);
+  const timeUsed = Math.floor((new Date() - examStartTime) / 1000);
+  const minutes = Math.floor(timeUsed / 60);
+  const seconds = timeUsed % 60;
+  
+  // Actualizar UI
+  document.getElementById('finalScore').textContent = score;
+  document.getElementById('correctAnswers').textContent = correctCount;
+  document.getElementById('incorrectAnswers').textContent = examQuestions.length - correctCount;
+  document.getElementById('timeUsed').textContent = 
+    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  
+  // Establecer porcentaje para el círculo de puntaje
+  document.querySelector('.score-circle').style.setProperty('--score-percent', `${score}%`);
+  
+  // Mostrar mensaje
+  const scoreMessage = document.getElementById('scoreMessage');
+  if (score >= 80) {
+    scoreMessage.textContent = '¡Excelente trabajo! Estás listo para la certificación.';
+  } else if (score >= 60) {
+    scoreMessage.textContent = 'Buen intento, pero necesitas más práctica.';
+  } else {
+    scoreMessage.textContent = 'Necesitas más estudio antes de intentar el examen real.';
+  }
+  
+  // Generar recomendaciones
+  generateRecommendations(correctCount, examQuestions);
+  
+  // Mostrar resultados y ocultar examen
+  document.getElementById('examModal').style.display = 'none';
+  document.getElementById('resultsModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  
+  // Detener temporizador
+  stopTimer();
+}
     
     // Función para generar recomendaciones
     function generateRecommendations(correctCount, questions) {
